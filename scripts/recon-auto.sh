@@ -38,15 +38,13 @@ while IFS= read -r domain || [ -n "$domain" ]; do
 done < "$INPUT"
 
 # 5. Cek Host yang Live
-log_msg="[$(get_time)] INFO: Memfilter host yang hidup dengan httpx (High Speed)..."
+log_msg="[$(get_time)] INFO: Memfilter host yang hidup dengan httpx..."
 echo "$log_msg" | tee -a "$PROGRESS_LOG"
 
 if [ -f "$ALL_SUBS" ]; then
-    # -threads 200: Melakukan 200 koneksi sekaligus
-    # -rl 500: Rate limit 500 request per detik (biar gak dianggap serangan DDoS)
-    # -timeout 2: Gak usah nunggu lama kalau webnya lemot
-    # -o: Menulis langsung ke file output
-    cat "$ALL_SUBS" | httpx -silent -threads 200 -rl 500 -timeout 2 -o "$LIVE_HOSTS" 2>>"$ERROR_LOG"
+    # -sc (status-code), -td (title), -cl (content-length)
+    # -nc (no-color) sangat penting agar file .txt bersih dari kode warna terminal
+    cat "$ALL_SUBS" | httpx -silent -threads 100 -rl 300 -timeout 2 -sc -td -cl -nc -o "$LIVE_HOSTS" 2>>"$ERROR_LOG"
 else
     echo "[$(get_time)] WARNING: Tidak ada subdomain ditemukan." | tee -a "$ERROR_LOG"
 fi
