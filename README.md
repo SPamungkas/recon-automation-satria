@@ -50,11 +50,11 @@ Timestamping: Memberikan penanda waktu pada setiap proses agar riwayat scan terd
 # Contoh Hasil
 Berikut merupkan hasil yang didapat dari proses eksekusi:
 <p align="center">
- <img width="500" height="108" alt="image" src="https://github.com/user-attachments/assets/9cc87396-9d3e-4e8f-9763-0ce66335c602" />
+ <img width="500" height="102" alt="image" src="https://github.com/user-attachments/assets/cf6793ac-6bcf-4d27-b3c3-87120ed93272" />
   <br>
 </p>
 Berikut merupakan hasil dari live.txt:
 <p align="center">
- <img width="500" height="98" alt="image" src="https://github.com/user-attachments/assets/5e249785-0d42-4139-b32b-d79f9fcfb6b2" />
+ <img width="500" height="82" alt="image" src="https://github.com/user-attachments/assets/eb461299-13a6-4907-9ca3-b3be0d23d51b" />
   <br>
 </p>
